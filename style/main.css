@@ -13,11 +13,16 @@ img {
     margin-left: auto;
     padding-left: 1em;
     padding-right: 1em;
+    max-width: 980px;
 }
 
 /* HEADER */
 .header {
     background: #fff;
+    width: 100%;
+}
+.js .header {
+    position: fixed;
     width: 100%;
 }
 
@@ -31,14 +36,14 @@ img {
     font-weight: bold;
     color: #fff;
     float: left;
-}
-
-.header__btnMenu {
-
+    text-align: right;
 }
 
 .header__nav {
     clear: left;
+}
+.js .header__nav {
+    transition: max-height 1s;
 }
 .header__nav ul {
     margin: 0;
@@ -62,6 +67,14 @@ img {
 }
 .header__nav a:hover {
     color: #63c6ae;
+}
+.header__btnMenu {
+    float: right;
+    margin: 1.5em;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 /* HERO */
@@ -224,7 +237,7 @@ img {
 .quote-container {
     background-color: #63c6ae;
     padding: 50px 0;
-    border-bottom: 12px solide #48b9a1;
+    border-bottom: 12px solid #48b9a1;
 }
 .quote-slideshow h2{
     color: #fff;
@@ -239,4 +252,81 @@ img {
     color: #fff;
     text-align: center;
     font-size: 18px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #242a2c;
+    padding: 50px 0 250px;
+    color: #454e51;
+    font-size: 14px;
+}
+.footer__links li {
+    list-style: none;
+}
+.footer__links a {
+    color: #454e51;
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+}
+.footer__logo {
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        position: fixed;
+    }
+    .logo-text {
+        width: 25%;
+        box-sizing: border-box;
+    }
+    .header__btnMenu {
+        display: none;
+    }
+    .header__nav {
+        float: left;
+        width: 75%;
+        clear: none;
+        max-width: 800px;
+    }
+    .header__nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    .header__nav li {
+        border-bottom: none;
+        flex-grow: 1;
+    }
+    .header__nav a {
+        background-color: #fff;
+    }
+
+    /* CARDS */
+    .people-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+    }
+
+    /* CONTENT */
+    .content .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    /* LAST ARTICLES */
+    .last-articles__thumbs {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    /* FOOTER */
+    .footer .container {
+        display: flex;
+    }
+    .footer .container > * {
+        margin: 1.5em;
+    }
 }
